@@ -1,15 +1,39 @@
 <% provide(:title, 'Home') %>
 
+<% if logged_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      
+      <section class="stats">
+        <%= render 'shared/stats' %>
+      </section>
+
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+    <div class="span8">
+      <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+
 <div class="center hero-unit">
   <h1>Welcome to APPCO Twitter!</h1>
 
-  <h2>
-    This is the home page for the
+  <h2 class="BHoma">
+    این برنامه توئیتر
     <a href="http://appcosolution.com/">APPCO Solutions</a>
     Twitter demo app.
   </h2>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+  <%= link_to "ثبت نام", signup_path, class: "btn btn-large btn-primary" %>
 </div>
 
 <%= link_to image_tag("fav.jpeg", alt: "Rails"), 'http://appcosolution.com/' %>
+
+<%end%>

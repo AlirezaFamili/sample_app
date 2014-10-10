@@ -1,0 +1,25 @@
+Hi <%= @user.name %>,
+
+Welcome to APPCO Twitter! Click on the link below to activate your account:
+
+<!--Recalling that
+
+edit_user_url(user)
+produces a URL of the form
+
+http://www.example.com/users/1/edit
+the corresponding account activation link will look like this:
+
+http://www.example.com/account_activations/q5lt38hQDc_959PVoo6b7A/edit
+
+ALSOOOOO!!
+
+In order to include the email as well, we need to use a query parameter, which in a URL appears as key-value pairs located after a question mark:
+
+account_activations/q5lt38hQDc_959PVoo6b7A/edit?email=foo%40example.com
+Notice that the ‘@’ in the email address appears as %40, i.e., it’s “escaped out” to guarantee a valid URL. The way to set a query parameter in Rails is to include a hash in the named route:
+
+edit_account_activation_url(@user.activation_token, email: @user.email)
+-->
+
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
