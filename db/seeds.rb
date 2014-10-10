@@ -7,10 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # Users
-User.create!(name:  "Example User",
-             email: "example@railstutorial.org",
-             password:              "foobar",
-             password_confirmation: "foobar",
+User.create!(name:  "Alireza Famili",
+             email: "famili.alireza@gmail.com",
+             password:              "Ali110",
+             password_confirmation: "Ali110",
              admin:     true,
              activated: true,
              activated_at: Time.zone.now)
